@@ -20,6 +20,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ✅ Rota padrão para verificar se a API está no ar
+@app.get("/")
+async def root():
+    return {"message": "FUNCIONOU!"}
+
 # 🛠️ Gerar Token JWT
 def generate_token():
     payload = {
